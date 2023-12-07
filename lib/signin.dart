@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:streamflex/chooselanguage.dart';
 import 'package:streamflex/create.dart';
 import 'package:streamflex/forgot.dart';
-import 'package:streamflex/home.dart';
+import 'package:streamflex/user_auth/google_sign.dart';
 
 final _signinkey= GlobalKey<FormState>();
 
@@ -23,10 +25,19 @@ class _signinState extends State<signin> {
     RegExp regex =
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
  }
+ FirebaseAuth _auth =FirebaseAuth.instance;
 
    final _email = TextEditingController();
   final _name = TextEditingController();
+
     final _password = TextEditingController();
+
+    Future login() async {
+await FirebaseAuth.instance.signInWithEmailAndPassword(
+  email: _email.text.trim(), 
+  password: _password.text.trim());
+
+}
 
     @override
 void dispose() {
@@ -210,12 +221,19 @@ void dispose() {
                   
                     
                     child: ElevatedButton(onPressed: () {
-                      
-                                             Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const CreateAccount()));
+
+                       if (_signinkey.currentState!.validate()){
+                                      login();
+                               
+                                      
+                                            
+                               
+                                    }
                     },
+                                           
+                      
+
+                    
                      
             
                  
@@ -258,7 +276,13 @@ void dispose() {
                                  ),
                   
               ),
-              TextButton(onPressed: () {}, 
+              TextButton(onPressed: () {
+  Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const CreateAccount()));
+
+              }, 
               child: Text(
                  "Sign Up",
                             style: GoogleFonts.ubuntu(
@@ -295,13 +319,21 @@ void dispose() {
                  ),
                    Center(
                     child: GestureDetector(
-            onTap: () {
-                      
-                                             Navigator.pushReplacement(
+            onTap: () async {
+                       UserCredential? userCredential = await signInWithGoogle();
+
+    if (userCredential != null) {
+
+       Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Home()));
-              // Handle button tap
+                                      builder: (context) =>  FirstScreen()));
+      
+      User? user = userCredential.user;
+      print("User ID: ${user!.uid}");
+    } else {
+     
+    }        
             },
             child: Image.asset(
               'assets/Google__G__Logo.jpg',

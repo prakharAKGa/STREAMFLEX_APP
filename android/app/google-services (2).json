@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "794141095538",
+    "project_id": "streamflex-ff624",
+    "storage_bucket": "streamflex-ff624.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794141095538:android:b15108f1d7e6bde85134eb",
+        "android_client_info": {
+          "package_name": "com.example.project1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794141095538-hqmva9840qgt5fcb1n8b7kn214tlqa24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQs_ZgCX8rxieIu4m_5MtaRnycrvBP-DE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794141095538-hqmva9840qgt5fcb1n8b7kn214tlqa24.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "794141095538-ab74n5m1ehb068abq0t9idiumjtpt8r7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.streamflex"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794141095538:android:e85a7b60521825995134eb",
+        "android_client_info": {
+          "package_name": "com.example.streamflex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794141095538-rqbkgam66qsj4orhcuj9rtr47jnktt85.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.streamflex",
+            "certificate_hash": "2c0366ffd3d4fffc420d77a8a2de50c2dfb1486a"
+          }
+        },
+        {
+          "client_id": "794141095538-hqmva9840qgt5fcb1n8b7kn214tlqa24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQs_ZgCX8rxieIu4m_5MtaRnycrvBP-DE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794141095538-hqmva9840qgt5fcb1n8b7kn214tlqa24.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "794141095538-ab74n5m1ehb068abq0t9idiumjtpt8r7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.streamflex"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

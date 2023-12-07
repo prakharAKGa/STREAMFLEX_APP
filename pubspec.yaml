@@ -37,6 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.4
   otp_text_field: ^1.1.3
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.15.0
+  image_picker: ^1.0.4
+  cloud_firestore: ^4.13.3
+  lottie: ^2.3.2
+  google_sign_in: ^6.1.6
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +77,21 @@ flutter:
       - assets/Sign in (2).png
       - assets/Google__G__Logo.jpg
       - assets/Group 24.png
+      - assets/Combined-Shape (1).png
+      - assets/Combined-Shape.png
+      - assets/Group 109.png
+      - assets/image 6.png
+      - assets/Vector.png
+      - assets/STREAMFLEX (1).png
+      - assets/MONEY HEIST (1).jpg
+      - assets/360_F_352117727_d5h8yi1Smn7mxzYKte15ThuDlHzRuGkN-removebg-preview.png
+      - assets/MV5BNWRkMjA0NjItMmViYS00MDQyLTgyMWYtOWFmOTA4NmU5MjRjXkEyXkFqcGdeQXVyNDY4NjAxNTc@._V1_.jpg
+      - assets/MASK MONEY HEIST (1).jpg
+      - assets/MONEY HEIST 2 (1).jpg
+      - assets/Group 38.png
+      - assets/PLAY NOW.png
+      - assets/DOWNLOAD.png
+      - assets/Download Page Icon.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

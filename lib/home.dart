@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:streamflex/create.dart';
+import 'package:streamflex/main_page.dart';
 
 class Home extends StatefulWidget{
   const Home({super.key});
@@ -76,7 +76,7 @@ unlimited TV shows and more.''',
                                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => CreateAccount()));
+                                      builder: (context) => MainPage()));
                     },
                      
 

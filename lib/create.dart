@@ -1,7 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:streamflex/home.dart';
-import 'package:streamflex/signin.dart';
+import 'package:streamflex/chooselanguage.dart';
+import 'package:streamflex/user_auth/google_sign.dart';
 
 final _createaccountkey= GlobalKey<FormState>();
 
@@ -18,11 +19,14 @@ class _CreateAccountState extends State<CreateAccount> {
 
    RegExp regex =
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
+        
+          static var currentState;
  String? validatePassword(String value) {
     RegExp regex =
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
  }
 
+ final FirebaseAuth _auth =FirebaseAuth.instance;
 
    final _email = TextEditingController();
   final _name = TextEditingController();
@@ -224,13 +228,34 @@ bool _passwordVisible = false;
                                    Center(
                   
                     
-                    child: ElevatedButton(onPressed: () {
+                    child: ElevatedButton(onPressed: () async {
+                                             
+                                             
+
+
                       
+                                         
+                                        
+                                          if( _createaccountkey.currentState!.validate()) {
+                                              
+        UserCredential userCredential =
+            await _auth.createUserWithEmailAndPassword(
+          email: _email.text,
+          password: _password.text,
+        );
                                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const signin()));
+                                      builder: (context) => FirstScreen()));
+                                      
+                                            
+                                          }
+                                          else{
+                                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text('Error')));
+                                          }
                     },
+                    
                      
 
                  
@@ -276,13 +301,22 @@ continue with''',
                  ),
                    Center(
                     child: GestureDetector(
-  onTap: () {
-                      
-                                             Navigator.pushReplacement(
+  onTap: () async {
+                 
+         UserCredential? userCredential = await signInWithGoogle();
+
+    if (userCredential != null) {
+
+       Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Home()));
-    // Handle button tap
+                                      builder: (context) =>  FirstScreen()));
+      
+      User? user = userCredential.user;
+      print("User ID: ${user!.uid}");
+    } else {
+     
+    }              
   },
   child: Image.asset(
     'assets/Google__G__Logo.jpg',

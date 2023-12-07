@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "794141095538",
+    "project_id": "streamflex-ff624",
+    "storage_bucket": "streamflex-ff624.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794141095538:android:b15108f1d7e6bde85134eb",
+        "android_client_info": {
+          "package_name": "com.example.project1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQs_ZgCX8rxieIu4m_5MtaRnycrvBP-DE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794141095538:android:e85a7b60521825995134eb",
+        "android_client_info": {
+          "package_name": "com.example.streamflex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQs_ZgCX8rxieIu4m_5MtaRnycrvBP-DE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
